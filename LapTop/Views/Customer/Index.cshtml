@@ -1,0 +1,77 @@
+﻿@model IEnumerable<LapTop.Models.Customer>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Customer</h1>
+
+<p>
+    <a asp-action="Create">Create New Customer</a>
+    <form asp-controller="Customer" asp-action="Index" method="get" style="text-align:right;">
+
+        <p>
+            <input type="text" name="search" />
+            <input type="submit" value="Search" />
+
+        </p>
+
+
+    </form>
+</p>
+<table class="table">
+    <thead>
+        <tr style="text-align: center;">
+            <th>
+                Mã khách hàng
+            </th>
+            <th>
+                Tên đăng nhập
+            </th>
+            <th>
+                Tên khách hàng
+            </th>
+            <th>
+                Số điện thoại
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Giới tính
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenDN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoDT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GTinh)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
