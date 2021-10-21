@@ -48,5 +48,56 @@ namespace LapTop.Controllers
             return Redirect("/Customer/Index");
         }
 
+        public ActionResult Details(string makh)
+        {
+            LapTopContext context = HttpContext.RequestServices.GetService(typeof(LapTop.Models.LapTopContext)) as LapTopContext;
+            ViewData["Customer"] = context.GetDataCustomer(makh);
+;           return View(context.GetDataCustomer(makh));
+        }
+
+        public ActionResult Edit(string makh)
+        {
+            LapTopContext context = HttpContext.RequestServices.GetService(typeof(LapTop.Models.LapTopContext)) as LapTopContext;
+            ViewData["Customer"] = context.GetDataCustomer(makh);
+            return View(context.GetDataCustomer(makh));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(string makh, Customer kh)
+        {
+           
+            LapTopContext context = HttpContext.RequestServices.GetService(typeof(LapTop.Models.LapTopContext)) as LapTopContext;
+            //ViewBag.greet = makh;
+            if (context.UpdateCustomer(kh) != 0)
+            {
+                return Redirect("/Customer/Index");
+            }
+            return Redirect("/Customer/Index");
+        }
+
+        public ActionResult Delete(string makh)
+        {
+            LapTopContext context = HttpContext.RequestServices.GetService(typeof(LapTop.Models.LapTopContext)) as LapTopContext;
+            ViewData["Customer"] = context.GetDataCustomer(makh);
+            if (context.DeleteCustomer(makh) != 0)
+            {
+                return Redirect("/Customer/Index");
+            }
+            return Redirect("/Customer/Index");
+         }
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Delete(string makh, Customer kh)
+        //{
+        //    LapTopContext context = HttpContext.RequestServices.GetService(typeof(LapTop.Models.LapTopContext)) as LapTopContext;
+
+        //    if (context.DeleteCustomer(kh) != 0)
+        //    {
+        //        return Redirect("/Customer/Index");
+        //    }
+        //    return Redirect("/Customer/Index");
+        //}
     }
 }

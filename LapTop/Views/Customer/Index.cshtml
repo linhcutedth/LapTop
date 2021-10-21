@@ -49,27 +49,30 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.MaKH)
+                @item.MaKH
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TenDN)
+                @item.TenDN
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TenKH)
+                @item.TenKH
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.SoDT)
+                @item.SoDT
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Email)
+                @item.Email
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.GTinh)
+                @item.GTinh
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @*@Html.ActionLink("Edit", "Edit", new { makh = item.MaKH  }) |
+                  @Html.ActionLink("Details", "Details", new { makh = item.MaKH }) |
+                  @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                <a href="/Customer/Edit?makh=@item.MaKH">Edit</a> |
+                <a href="/Customer/Details?makh=@item.MaKH">Details</a> |
+                <a href="/Customer/Delete?makh=@item.MaKH">Delete</a>
             </td>
         </tr>
 }

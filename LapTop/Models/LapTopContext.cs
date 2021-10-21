@@ -77,6 +77,32 @@ namespace LapTop.Models
             return list;
         }
 
+        public Customer GetDataCustomer(string makh)
+        {
+
+            Customer kh = new Customer();
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "select * from KhachHang where makh ='" + makh + "' ";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        kh.MaKH = reader["makh"].ToString();
+                        kh.TenDN = reader["tendangnhap"].ToString();
+                        kh.TenKH = reader["tenKH"].ToString();
+                        kh.SoDT = reader["soDT"].ToString();
+                        kh.Email = reader["email"].ToString();
+                        kh.GTinh = reader["gioiTinh"].ToString();
+                    };
+
+                }
+            }
+            return kh;
+        }
+
         public int CreateCustomer(Customer kh)
         {
             int count = 0;
@@ -96,6 +122,41 @@ namespace LapTop.Models
             }
             return count;
         }
+
+        public int UpdateCustomer(Customer kh)
+        {
+            int count = 0;
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "update khachhang set tenkh=@Tenkh, sodt =@Sodt, email=@Email, gioitinh =@Gioitinh where makh ='"+kh.MaKH+"' ";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("makh", kh.MaKH.ToString());
+                cmd.Parameters.AddWithValue("tendangnhap", kh.TenDN.ToString());
+                cmd.Parameters.AddWithValue("tenkh", kh.TenKH.ToString());
+                cmd.Parameters.AddWithValue("sodt", kh.SoDT.ToString());
+                cmd.Parameters.AddWithValue("email", kh.Email.ToString());
+                cmd.Parameters.AddWithValue("gioitinh", kh.GTinh.ToString());
+                cmd.ExecuteNonQuery();
+                count++;
+            }
+            return count;
+        }
+
+        public int DeleteCustomer(string makh)
+        {
+            int count = 0;
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "delete from khachhang where makh ='" + makh + "' ";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+                count++;
+            }
+            return count;
+        }
+
 
     }
 }

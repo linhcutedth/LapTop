@@ -1,0 +1,36 @@
+﻿@model LapTop.Models.Customer
+
+@{
+    ViewData["Title"] = "Edit";
+    var customer = ViewData["Customer"] as Customer;
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>  @ViewBag.greet taaaaa
+
+<h4>Customer</h4>
+<hr />
+
+@using (Html.BeginForm("Edit", "Customer", new { style = "border:1px solid black;" }))
+{
+    <div> <label for="maKH" style="width: 200px; ">Mã khách hàng:</label> <input type="text" id="maKH" name="maKH" value="@customer.MaKH"> </div>
+    <br>
+    <div> <label for="tenDN" style="width: 200px; ">Tên đăng nhập:</label> <input type="text" id="tenDN" name="tenDN" value="@customer.TenDN"></div>
+    <br>
+    <div> <label for="tenKH" style="width: 200px; ">Tên khách hàng:</label> <input type="text" id="tenKH" name="tenKH" value="@customer.TenKH"></div>
+    <br>
+    <div> <label for="soDT" style="width: 200px; "> Số điện thoại:</label> <input type="text" id="soDT" name="soDT" value="@customer.SoDT"> </div>
+    <br>
+    <div> <label for="email" style="width: 200px; ">Email:</label><input type="text" id="email" name="email" value="@customer.Email"> </div>
+    <br>
+    <div> <label for="gTinh" style="width: 200px; ">Giới tính:</label> <input type="text" id="gTinh" name="gTinh" value="@customer.GTinh"> </div>
+    <br>
+    <div> <input type="submit" value="Edit Customer" /></div>
+}
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
