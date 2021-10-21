@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\UIT\\Nam3\\FrameWork\\Seminar\\LapTop\\LapTop\\LapTop.csproj": {}
+    "D:\\UIT\\Nam3\\Web\\LapTop\\LapTop\\LapTop.csproj": {}
   },
   "projects": {
-    "D:\\UIT\\Nam3\\FrameWork\\Seminar\\LapTop\\LapTop\\LapTop.csproj": {
+    "D:\\UIT\\Nam3\\Web\\LapTop\\LapTop\\LapTop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\UIT\\Nam3\\FrameWork\\Seminar\\LapTop\\LapTop\\LapTop.csproj",
+        "projectUniqueName": "D:\\UIT\\Nam3\\Web\\LapTop\\LapTop\\LapTop.csproj",
         "projectName": "LapTop",
-        "projectPath": "D:\\UIT\\Nam3\\FrameWork\\Seminar\\LapTop\\LapTop\\LapTop.csproj",
+        "projectPath": "D:\\UIT\\Nam3\\Web\\LapTop\\LapTop\\LapTop.csproj",
         "packagesPath": "C:\\Users\\Nguyen Linh\\.nuget\\packages\\",
-        "outputPath": "D:\\UIT\\Nam3\\FrameWork\\Seminar\\LapTop\\LapTop\\obj\\",
+        "outputPath": "D:\\UIT\\Nam3\\Web\\LapTop\\LapTop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nguyen Linh\\AppData\\Roaming\\NuGet\\NuGet.Config",

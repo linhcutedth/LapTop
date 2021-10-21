@@ -28,5 +28,25 @@ namespace LapTop.Controllers
             return View(context.SearchCustomer(search));
         }
 
+        [HttpGet]
+        public ActionResult CreateCustomer()
+        {
+            var model = new Customer();
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateCustomer(Customer kh)
+        {
+            LapTopContext context = HttpContext.RequestServices.GetService(typeof(LapTop.Models.LapTopContext)) as LapTopContext;
+
+            if (context.CreateCustomer(kh) != 0)
+            {
+                return Redirect("/Customer/Index");
+            }
+            return Redirect("/Customer/Index");
+        }
+
     }
 }

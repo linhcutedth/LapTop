@@ -76,5 +76,26 @@ namespace LapTop.Models
             }
             return list;
         }
+
+        public int CreateCustomer(Customer kh)
+        {
+            int count = 0;
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "insert into khachhang value(?makh, ?tendangnhap, ?tenkh, ?sodt, ?email, ?gioitinh) ON DUPLICATE KEY UPDATE MaKH = ?makh";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("makh", kh.MaKH.ToString());
+                cmd.Parameters.AddWithValue("tendangnhap", kh.TenDN.ToString());
+                cmd.Parameters.AddWithValue("tenkh", kh.TenKH.ToString());
+                cmd.Parameters.AddWithValue("sodt", kh.SoDT.ToString());
+                cmd.Parameters.AddWithValue("email", kh.Email.ToString());
+                cmd.Parameters.AddWithValue("gioitinh", kh.GTinh.ToString());
+                cmd.ExecuteNonQuery();
+                count++;
+            }
+            return count;
+        }
+
     }
 }

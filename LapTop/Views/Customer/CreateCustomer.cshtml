@@ -1,0 +1,35 @@
+﻿@model LapTop.Models.Customer
+
+@{
+    ViewData["Title"] = "CreateCustomer";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Customer</h4>
+<hr />
+
+@using (Html.BeginForm("CreateCustomer", "Customer", new { style = "border:1px solid black;" }))
+{
+    <div> <p style="width: 200px; ">Mã khách hàng </p> @Html.TextBoxFor(kh => kh.MaKH) </div>
+    <br>
+    <div> <p style="width: 200px; ">Tên đăng nhập</p> @Html.TextBoxFor(kh => kh.TenDN) </div>
+    <br>
+    <div> <p style="width: 200px; ">Tên khách hàng</p> @Html.TextBoxFor(kh => kh.TenKH) </div>
+    <br>
+    <div> <p style="width: 200px; ">Số điện thoại</p> @Html.TextBoxFor(kh => kh.SoDT) </div>
+    <br>
+    <div> <p style="width: 200px; ">Email</p> @Html.TextBoxFor(kh => kh.Email) </div>
+    <br>
+    <div> <p style="width: 200px; ">Giới tính</p> @Html.TextBoxFor(kh => kh.GTinh) </div>
+    <br>
+    <div> <input type="submit" value="Add Customer" /></div>
+}
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
