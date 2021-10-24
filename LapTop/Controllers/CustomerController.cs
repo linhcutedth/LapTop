@@ -9,6 +9,7 @@ namespace LapTop.Controllers
 {
     public class CustomerController : Controller
     {
+        //withought entity framework
         //public IActionResult Index()
         //{
         //    LapTopContext context = HttpContext.RequestServices.GetService(typeof(LapTop.Models.LapTopContext)) as LapTopContext;
@@ -24,7 +25,7 @@ namespace LapTop.Controllers
 
         public IActionResult Index(string search)
         {
-            LapTopContext context = HttpContext.RequestServices.GetService(typeof(LapTop.Models.LapTopContext)) as LapTopContext;
+            LapTopContext context = HttpContext.RequestServices.GetService(typeof(LapTop.Models.LapTopContext)) as LapTopContext; // Tạo phiên bản LapTopContext
             return View(context.SearchCustomer(search));
         }
 
@@ -52,7 +53,7 @@ namespace LapTop.Controllers
         {
             LapTopContext context = HttpContext.RequestServices.GetService(typeof(LapTop.Models.LapTopContext)) as LapTopContext;
             ViewData["Customer"] = context.GetDataCustomer(makh);
-;           return View(context.GetDataCustomer(makh));
+            return View(context.GetDataCustomer(makh));
         }
 
         public ActionResult Edit(string makh)
@@ -66,7 +67,7 @@ namespace LapTop.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(string makh, Customer kh)
         {
-           
+
             LapTopContext context = HttpContext.RequestServices.GetService(typeof(LapTop.Models.LapTopContext)) as LapTopContext;
             //ViewBag.greet = makh;
             if (context.UpdateCustomer(kh) != 0)
@@ -85,7 +86,7 @@ namespace LapTop.Controllers
                 return Redirect("/Customer/Index");
             }
             return Redirect("/Customer/Index");
-         }
+        }
 
         //[HttpPost]
         //[ValidateAntiForgeryToken]

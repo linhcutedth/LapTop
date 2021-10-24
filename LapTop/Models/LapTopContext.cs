@@ -84,8 +84,10 @@ namespace LapTop.Models
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                string query = "select * from KhachHang where makh ='" + makh + "' ";
+                string temp = makh;
+                string query = "select * from KhachHang where makh =@makh";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@makh", temp);
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -109,7 +111,7 @@ namespace LapTop.Models
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                string query = "insert into khachhang value(?makh, ?tendangnhap, ?tenkh, ?sodt, ?email, ?gioitinh) ON DUPLICATE KEY UPDATE MaKH = ?makh";
+                string query = "insert into khachhang value(?makh, ?tendangnhap, ?tenkh, ?sodt, ?email, ?gioitinh) ";//ON DUPLICATE KEY UPDATE MaKH = ?makh
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("makh", kh.MaKH.ToString());
                 cmd.Parameters.AddWithValue("tendangnhap", kh.TenDN.ToString());
@@ -129,8 +131,10 @@ namespace LapTop.Models
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                string query = "update khachhang set tenkh=@Tenkh, sodt =@Sodt, email=@Email, gioitinh =@Gioitinh where makh ='"+kh.MaKH+"' ";
+                string makh = kh.MaKH;
+                string query = "update khachhang set tenkh=@Tenkh, sodt =@Sodt, email=@Email, gioitinh =@Gioitinh where makh = @makh";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@makh", makh);
                 cmd.Parameters.AddWithValue("makh", kh.MaKH.ToString());
                 cmd.Parameters.AddWithValue("tendangnhap", kh.TenDN.ToString());
                 cmd.Parameters.AddWithValue("tenkh", kh.TenKH.ToString());
@@ -149,8 +153,10 @@ namespace LapTop.Models
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                string query = "delete from khachhang where makh ='" + makh + "' ";
+                string temp = makh;
+                string query = "delete from khachhang where makh = @makh ";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@makh", temp); //Binding
                 cmd.ExecuteNonQuery();
                 count++;
             }
