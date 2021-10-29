@@ -1,80 +1,94 @@
 ﻿@model IEnumerable<LapTop.Models.Customer>
 
 @{
-    ViewData["Title"] = "Index";
-    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewData["KhachHang"] = "Index";
+    Layout = "/Views/Shared/_Layout2.cshtml";
 }
 
-<h1>Customer</h1>
+<!DOCTYPE html>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet">
 
-<p>
-    <a href="/Customer/CreateCustomer">Create New Customer</a>
-    <form asp-controller="Customer" asp-action="Index" method="get" style="text-align:right;">
+
+<!-- Area Chart -->
+<!--<div class="col-xl-8 col-lg-7">-->
+
+
+    <!-- Card Body -->
+    <div class="card-body">
+        <h1 style="text-align: center;">DANH SÁCH KHÁCH HÀNG</h1>
 
         <p>
-            <input type="text" name="search" />
-            <input type="submit" value="Search" />
+            <a href="/Customer/CreateCustomer">Thêm khách hàng</a>
+            <form asp-controller="Customer" asp-action="Index" method="get" style="text-align:right;">
 
+                <p>
+                    <input type="text" name="search" />
+                    <input type="submit" value="Search" />
+
+                </p>
+
+
+            </form>
         </p>
+        <table class="table">
+            <thead>
+                <tr style="text-align: center;">
+                    <th>
+                        Mã khách hàng
+                    </th>
+                    <th>
+                        Tên đăng nhập
+                    </th>
+                    <th>
+                        Tên khách hàng
+                    </th>
+                    <th>
+                        Số điện thoại
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Giới tính
+                    </th>
 
-
-    </form>
-</p>
-<table class="table">
-    <thead>
-        <tr style="text-align: center;">
-            <th>
-                Mã khách hàng
-            </th>
-            <th>
-                Tên đăng nhập
-            </th>
-            <th>
-                Tên khách hàng
-            </th>
-            <th>
-                Số điện thoại
-            </th>
-            <th>
-                Email
-            </th>
-            <th>
-                Giới tính
-            </th>
-
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @item.MaKH
-            </td>
-            <td>
-                @item.TenDN
-            </td>
-            <td>
-                @item.TenKH
-            </td>
-            <td>
-                @item.SoDT
-            </td>
-            <td>
-                @item.Email
-            </td>
-            <td>
-                @item.GTinh
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { makh = item.MaKH  }) |
-                  @Html.ActionLink("Details", "Details", new { makh = item.MaKH }) |
-                  @Html.ActionLink("Delete", "Delete", new { makh = item.MaKH }, new { onclick = "return confirm('Are you sure you wish to delete this customer?');" })
-                @*<a href="/Customer/Edit?makh=@item.MaKH">Edit</a> |
-                <a href="/Customer/Details?makh=@item.MaKH">Details</a> |
-                <a href="/Customer/Delete?makh=@item.MaKH">Delete</a>*@
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.MaKH
+                        </td>
+                        <td>
+                            @item.TenDN
+                        </td>
+                        <td>
+                            @item.TenKH
+                        </td>
+                        <td>
+                            @item.SoDT
+                        </td>
+                        <td>
+                            @item.Email
+                        </td>
+                        <td>
+                            @item.GTinh
+                        </td>
+                        <td>
+                            @Html.ActionLink("Sửa", "Edit", new { makh = item.MaKH }) |
+                            @Html.ActionLink("Xem chi tiết", "Details", new { makh = item.MaKH }) |
+                            @Html.ActionLink("Xóa", "Delete", new { makh = item.MaKH }, new { onclick = "return confirm('Are you sure you wish to delete this customer?');" })
+                            @*<a href="/Customer/Edit?makh=@item.MaKH">Edit</a> |
+                                <a href="/Customer/Details?makh=@item.MaKH">Details</a> |
+                                <a href="/Customer/Delete?makh=@item.MaKH">Delete</a>*@
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        </div>
+    @*</div>*@

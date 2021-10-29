@@ -1,0 +1,144 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/nodeModule/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/nodeModule/perfect-scrollbar/dist/css/perfect-scrollbar.min.css" />
+    <link rel="stylesheet" href="~/nodeModule/flag-icon-css/css/flag-icon.min.css" />
+    <link rel="stylesheet" href="~/css/Style1.css" />
+</head>
+
+<body>
+
+    <div class=" container-scroller">
+        <!-- partial:partials/_navbar.html -->
+        <nav class="navbar navbar-default col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="bg-white text-center navbar-brand-wrapper">
+                <a class="navbar-brand brand-logo" href="index.html"><img src="images/logo_laptop_store.jpeg" /></a>
+                <!-- <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo_star_mini.jpg" alt=""></a> -->
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center">
+                <button class="navbar-toggler navbar-toggler d-none d-lg-block navbar-dark align-self-center mr-3" type="button" data-toggle="minimize">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <form class="form-inline mt-2 mt-md-0 d-none d-lg-block">
+                    <input class="form-control mr-sm-2 search" type="text" placeholder="Search">
+                </form>
+                <ul class="navbar-nav ml-lg-auto d-flex align-items-center flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link profile-pic" href="#"><img class="rounded-circle" src="images/face.jpg" alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-3x3-gap-fill" viewBox="0 0 16 16">
+                                <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2z" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-dark navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav> -
+
+        <!-- partial -->
+        <div class="container-fluid">
+            <div class="row row-offcanvas row-offcanvas-right">
+                <!-- partial:partials/_sidebar.html -->
+                <nav class="bg-white sidebar sidebar-offcanvas" id="sidebar">
+                    <!-- <div class="user-info">
+                        <img src="images/face.jpg" alt="">
+                        <p class="name">Richard V.Welsh</p>
+                        <p class="designation">Manager</p>
+                        <span class="online"></span>
+                    </div> -->
+                    <ul class="nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">
+                                <img src="images/home.png" alt="home">
+                                <span class="menu-title">&ensp; Trang chủ</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/widgets.html">
+                                <img src="images/order.png" alt="order">
+                                <span class="menu-title">&ensp; Đơn đặt hàng</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/forms/index.html">
+                                <img src="images/product.png" alt="product">
+                                <span class="menu-title">&ensp; Sản phẩm</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Customer/Index">
+                                <img src="images/customer-feedback.png" alt="customer">
+                                <span class="menu-title"> &ensp;Khách hàng</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/tables/index.html">
+                                <img src="images/report.png" alt="report">
+                                <span class="menu-title">&ensp; Báo cáo</span>
+                            </a>
+                        </li>
+
+
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <img src="images/settings.png" alt="setting">
+                                <span class="menu-title">&ensp; Cài đặt</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+
+                <div class="container">
+                    <main role="main" class="pb-3">
+                        @RenderBody()
+                    </main>
+                </div>
+
+                <footer class="footer">
+                    <div class="container-fluid clearfix">
+                        <span class="float-right">
+                            <a href="#">Laptop Store</a> &copy; 2021
+                        </span>
+                    </div>
+                </footer>
+
+                <!-- partial -->
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="~/nodeModule/jquery/dist/jquery.min.js"></script>
+    <script src="~/nodeModule/popper.js/dist/umd/popper.min.js"></script>
+    <script src="~/nodeModule/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/nodeModule/chart.js/dist/Chart.min.js"></script>
+    <script src="~/nodeModule/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5NXz9eVnyJOA81wimI8WYE08kW_JMe8g&callback=initMap" async defer></script>
+    <script src="~/js/off-canvas.js"></script>
+    <script src="~/js/hoverable-collapse.js"></script>
+    <script src="~/js/misc.js"></script>
+    <script src="~/js/chart.js"></script>
+    <script src="~/js/maps.js"></script>
+
+</body>
+
+</html>

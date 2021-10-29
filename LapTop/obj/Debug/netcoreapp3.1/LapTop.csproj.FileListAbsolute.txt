@@ -375,3 +375,4 @@ D:\UIT\Nam3\FrameWork\Demoo\LapTop\LapTop\obj\Debug\netcoreapp3.1\LapTop.genrunt
 D:\UIT\Nam3\FrameWork\Demoo\LapTop\LapTop\obj\Debug\netcoreapp3.1\LapTop.csproj.CopyComplete
 D:\UIT\Nam3\FrameWork\Demoo\LapTop\LapTop\obj\Debug\netcoreapp3.1\Razor\Views\Customer\Edit.cshtml.g.cs
 D:\UIT\Nam3\FrameWork\Demoo\LapTop\LapTop\obj\Debug\netcoreapp3.1\Razor\Views\Customer\Delete.cshtml.g.cs
+D:\UIT\Nam3\FrameWork\Demoo\LapTop\LapTop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout2.cshtml.g.cs

@@ -5,31 +5,65 @@
     Layout = "/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
+<!DOCTYPE html>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet">
 
-<h4>Customer</h4>
-<hr />
 
-@using (Html.BeginForm("CreateCustomer", "Customer", new { style = "border:1px solid black;" }))
-{
-    <div> <p style="width: 200px; ">Mã khách hàng </p> @Html.TextBoxFor(kh => kh.MaKH) </div>
-    <br>
-    <div> <p style="width: 200px; ">Tên đăng nhập</p> @Html.TextBoxFor(kh => kh.TenDN) </div>
-    <br>
-    <div> <p style="width: 200px; ">Tên khách hàng</p> @Html.TextBoxFor(kh => kh.TenKH) </div>
-    <br>
-    <div> <p style="width: 200px; ">Số điện thoại</p> @Html.TextBoxFor(kh => kh.SoDT) </div>
-    <br>
-    <div> <p style="width: 200px; ">Email</p> @Html.TextBoxFor(kh => kh.Email) </div>
-    <br>
-    <div> <p style="width: 200px; ">Giới tính</p> @Html.TextBoxFor(kh => kh.GTinh) </div>
-    <br>
-    <div> <input type="submit" value="Add Customer" /></div>
-}
-<div>
-    <a asp-action="Index">Back to List</a>
+<!-- Card Body -->
+<div class="card-body">
+
+    <h1 style="text-align: center; color: coral;">Thêm khách hàng</h1>
+  
+    <br />
+
+
+    @using (Html.BeginForm("CreateCustomer", "Customer", new { style = "border:1px solid red; " }))
+    {
+        <table class="table", style="text-align:center;">
+            <tr>
+                <td> <b> Mã khách hàng</b></td>
+                <td> @Html.TextBoxFor(kh => kh.MaKH, new { @class = "style" })</td>
+            </tr>
+            <tr>
+                <td> <b>Tên đăng nhập</b></td>
+                <td> @Html.TextBoxFor(kh => kh.TenDN, new { @class = "style" })</td>
+            </tr>
+             <tr>
+                 <td> <b>Tên khách hàng</b> </td>
+                 <td> @Html.TextBoxFor(kh => kh.TenKH, new { @class = "style" })</td>
+            </tr>
+             <tr>
+                 <td> <b>Số điện thoại</b></td>
+                 <td>  @Html.TextBoxFor(kh => kh.SoDT, new { @class = "style" })</td>
+            </tr>
+             <tr>
+                 <td> <b>Email</b></td>
+                 <td>  @Html.TextBoxFor(kh => kh.Email,  new { @class = "style" })</td>
+            </tr>
+            <tr>
+                <td> <b>Giới tính</b></td>
+                <td>  @Html.TextBoxFor(kh => kh.GTinh, new { @class = "style" })</td>
+            </tr>
+        </table>
+      <br />
+        <div style="text-align: center">  <input type="submit" value="Thêm khách hàng" /></div>
+    }
+    <div style="font-size: 12px;">
+        <a asp-action="Index">Trở về</a>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+<style>
+    .style{
+        text-align: center;
+        width: 70%;
+     }
+    .b {
+        width: 300px;
+    }
+</style>
